@@ -4,15 +4,14 @@
 
 #include "morse.h"
 
-struct Node{
+struct Node{ // Contéudo do nó da árvore
     char DataChar;
-    struct Node *LeftTree, * RightTree;
+    struct Node *LeftTree, *RightTree;
 };
 
+void BinaryTree(){// Cria a árvore em morse
 
-void BinaryTree(){// Função para criar a árvore
-
-    //Organização dos morse via ordem alfabética
+    //Organização por ordem alfabética
 
     DataTable[0] = ".-" ; DataTable[1] = "-...";
     DataTable[2] = "-.-." ; DataTable[3] = "-..";
@@ -28,17 +27,15 @@ void BinaryTree(){// Função para criar a árvore
     DataTable[22] = ".--" ; DataTable[23] = "-..-" ;
     DataTable[24] = "-.--" ; DataTable[25] = "--.." ;
 
-
-    Root = CreateNode(); // Cria a raiz da árvore nula, sem nenhum dado
+    Root = CreateNode(); // Cria a raiz da árvore nula, sem nenhum dado.
 
     // For para adicionar cada índice da tabela na árvore
-    for (int i = 0; i<26; i++){
+    for (int i = 0; i < 26; i++){
         AddNode('A' + i, DataTable[i]);
     }
 }
 
-// Função sem retorno para adicionar um nó na árvore
-void AddNode(char ch, char *str){
+void AddNode(char ch, char *str){ // Adiciona na árvore
     
     Current = Root;
     char *ptr = str;
@@ -62,8 +59,7 @@ void AddNode(char ch, char *str){
     Current->DataChar = ch;
 }
 
-//Função para criar  a raiz da árvore e retorna a raiza da árvore
-NODE *CreateNode(){
+NODE *CreateNode(){// Cria nó da ávrvore
 
     NODE *ptr = (NODE *) malloc(sizeof(NODE));
     ptr-> DataChar = ' ';
@@ -72,8 +68,8 @@ NODE *CreateNode(){
 
     return ptr;
 }
-// Dar uma olhada nessa função, para saber está sendo utilzada corretamente
-char GetChar(char *str){
+
+char GetChar(char *str){// Procura o elemento desejado na árvore
 
     Current = Root;
     if(strlen(str) == 0){
@@ -93,8 +89,8 @@ char GetChar(char *str){
     }
     return Current->DataChar;
 }
-// Função para deleter um no da árvore, recebe como parâmetro o nó da árvore
-void DeleteNode(NODE *ptr){
+
+void DeleteNode(NODE *ptr){ // Deleta um nó da árvore
     
     if(ptr != NULL){
         if(ptr->LeftTree != NULL){
@@ -108,22 +104,4 @@ void DeleteNode(NODE *ptr){
         free(ptr);
         ptr = NULL;
     }
-}
-
-int ReadString(char *p){
-    
-    printf("dentro do Read \n");
-
-    int i = 0 , len = 0;
-
-    do {
-        p[i] = getchar();
-        len ++;
-        i++;
-
-    }while(p[i-1] != '\n');
-
-    p[i-1] = '\0';
-
-    return --len;
 }

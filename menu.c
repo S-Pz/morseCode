@@ -7,7 +7,7 @@ int menu(){
 
     int aux;
 
-    while (aux) { 
+    do{ 
 
         printf("###########################################\n");
         printf("Escolha uma das opcoes:\n");
@@ -18,6 +18,7 @@ int menu(){
         scanf("%d", &aux);
         fflush(stdin);
 
-        return(aux);
-    }
+        return aux;
+
+    }while(aux != 0);
 }
