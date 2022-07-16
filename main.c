@@ -12,9 +12,8 @@ void main(){
     char *msg = malloc(256);
     
     BinaryTree();
-    
-    int aux = 3;
-    aux = menu();
+
+    int aux = menu();
     
     switch (aux){
     
@@ -32,8 +31,7 @@ void main(){
             while(token != NULL){
 
                 ch = GetChar(token);
-                printf("%c\n", ch);
-
+        
                 sprintf(Temp, "%c", ch);
                 strcat(message, Temp);
 
@@ -46,9 +44,9 @@ void main(){
                     strcat(message, " ");
                     Input ++;
                 }
-            
                 token = strtok(NULL, " /");
             }
+
             printf("A mensagem decodificada eh: ");
             printf("%s", message);
 
