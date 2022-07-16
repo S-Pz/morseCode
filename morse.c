@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "arvore.h"
-
+#include "morse.h"
 
 struct Node{
     char DataChar;
