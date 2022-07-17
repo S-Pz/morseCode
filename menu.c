@@ -1,5 +1,5 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #include "menu.h"
 
@@ -13,6 +13,7 @@ int menu(){
         printf("Escolha uma das opcoes:\n");
         printf("Digite 1 para DECODIFICAR uma mensagem em morse \n");
         printf("Digite 2 para CODIFICAR uma mensagem em morse \n");
+        printf("Digite 3 para ver o caminhamento PRE-ORDEM \n");
         printf("Digite 0 para SAIR \n");
         printf("###########################################\n");
         scanf("%d", &aux);

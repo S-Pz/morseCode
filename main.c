@@ -7,10 +7,6 @@
 
 void main(){
     
-    char Option, *token, *Input, ch, Temp[256];
-    char InputString[256], message[256]= "";
-    char *msg = malloc(256);
-    
     BinaryTree();
 
     int aux = menu();
@@ -18,8 +14,8 @@ void main(){
     switch (aux){
     
         case 1 :
-
-            printf("Digite em código morse a menssagem: \n");
+            decodifica();
+            /*printf("Digite em código morse a menssagem: \n");
 
             setbuf(stdin,NULL);
             fgets(InputString, 256, stdin);
@@ -48,13 +44,13 @@ void main(){
             }
 
             printf("A mensagem decodificada eh: ");
-            printf("%s", message);
+            printf("%s\n", message);*/
 
         break;
-
+        
         case 2:
-
-            printf("Escreva a mensagem que sera Codificada: \n");
+            codifica(aux);
+            /*printf("Escreva a mensagem que sera Codificada: \n");
             setbuf(stdin,NULL);
             fgets(msg, 256, stdin);
         
@@ -223,12 +219,16 @@ void main(){
                         printf (" %s", DataTable[25]);
                     break;
                 }
-            }
+            }*/
+
         break;
-        
+        case 3:
+            preOrdem(Root);
+        break;
         case 0 :
             printf("Você escolheu a opção SAIR");
         break;
     }
+    //emOrdem(Root);
     DeleteNode(Root);
 }
